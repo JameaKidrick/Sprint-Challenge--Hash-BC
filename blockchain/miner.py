@@ -45,7 +45,7 @@ def valid_proof(last_hash, proof):
     guess_hash = hashlib.sha256(guess).hexdigest()
     
     # print('LAST PROOF', last_hash[0:5], 'NEW PROOF', guess_hash[:5], 'VALID', guess_hash[:5] == last_hash[0:5])
-    return guess_hash[:5] == last_hash[0:5]
+    return guess_hash[:6] == last_hash[0:6]
 
 
 if __name__ == '__main__':

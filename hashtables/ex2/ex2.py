@@ -40,6 +40,6 @@ def reconstruct_trip(tickets, length):
         if next_route is not 'NONE' and next_route is not None:
             print(next_route)
             route[travel + 1] = next_route
-    print(route)
-    return route
+    print(route[:-1])
+    return route[:-1]
 
