@@ -7,11 +7,23 @@ from hashtables import (HashTable,
 
 
 def get_indices_of_item_weights(weights, length, limit):
+    """
+    finds two items whose sum of weights equals the weight limit `limit`
+    """
     ht = HashTable(16)
-
-    """
-    YOUR CODE HERE
-    """
+    i = 1
+    for num in range(len(weights) - 1):
+        for num2 in range(len(weights)):
+            id1 = 0
+            id2 = 0
+            if num2 > num:
+                id1 = num2
+                id2 = num
+            elif num2 < num:
+                id2 = num2
+                id1 = num
+            hash_table_insert(ht, weights[num] + weights[num2], (id1, id2))
+    return hash_table_retrieve(ht, limit)
 
     return None
 
